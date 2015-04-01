@@ -6,7 +6,7 @@ remove_vimrc:
 sym_vimrc:
   file.symlink:
     - name: {{ map.vimrc }}
-    - target: {{ map.vim_repo_target }}.vimrc
+    - target: {{ map.vim_repo_target }}/.vimrc
 
 remove_vim:
   file.absent:
