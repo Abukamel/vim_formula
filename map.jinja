@@ -13,5 +13,5 @@
     },
 }, merge=salt['pillar.get']('git:lookup')) %}
 
-{% set map = { 'vim_repo': 'https://github.com/Abukamel/vim_server.git', 'vundle_repo': 'https://github.com/gmarik/Vundle.vim.git', 'vundle_target': salt.cmd.run('echo ~/vim_server/.vim/bundle/Vundle.vim'), 'vim_repo_target': salt.cmd.run('echo ~/vim_server'), 'plugin_install_cmd': 'vim +PluginInstall +qall' } %}
+{% set map = { 'vim_repo': 'https://github.com/Abukamel/vim_server.git', 'vundle_repo': 'https://github.com/gmarik/Vundle.vim.git', 'vundle_target': salt.cmd.run('echo ~/vim_server/.vim/bundle/Vundle.vim'), 'vim_repo_target': salt.cmd.run('echo ~/vim_server'), 'plugin_install_cmd': 'vim +PluginInstall +qall', 'vimrc': salt.cmd.run('echo ~/.vimrc'), 'vimdir': salt.cmd.run('echo ~/vim')} %}
 

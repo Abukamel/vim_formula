@@ -1,25 +1,25 @@
 {% from "vim_formula/map.jinja" import map with context %}
 remove_vimrc:
   file.absent:
-    - name: ~/.vimrc
+    - name: {{ map.vimrc }}
 
 sym_vimrc:
   file.symlink:
-    - name: ~/.vimrc
-    - target: ~/vim_server/.vimrc
+    - name: {{ map.vimrc }}
+    - target: {{ map.vim_repo_target }}.vimrc
 
 remove_vim:
   file.absent:
-    - name: ~/.vim
+    - name: {{ map.vimdir }}
 
 sym_vim:
   file.symlink:
-    - name: ~/.vim
-    - target: ~/vim_server/.vim
+    - name: {{ map.vimdir }}
+    - target: {{ map.vim_repo_target }}/.vim
 
 remove_vundle:
   file.absent:
-    - name: ~/vim_ide/bundle/Vundle.vim
+    - name: {{ map.vim_repo_target }}/bundle/Vundle.vim
 
 clone_vundle:
   git.latest:
