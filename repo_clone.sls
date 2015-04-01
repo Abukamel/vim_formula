@@ -2,6 +2,6 @@
 repo_clone:
   git.latest:
     - name: {{ map.vim_repo }}
-    - target: ~/
+    - target: ~/vim_server
     - require:
       - pkg: git_install
